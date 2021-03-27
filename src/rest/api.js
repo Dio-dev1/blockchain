@@ -7,10 +7,3 @@ export const imageUpload = async (userImg) => {
     .then(data => data.data)
     .catch(error => { throw error.response.data });
 };
-
-/************************* user index image upload *************************/
-export const apiTest = async () => {
-  return await axios.get(`/users/test`, {})
-    .then(data => data.data)
-    .catch(error => { throw error.response.data });
-};

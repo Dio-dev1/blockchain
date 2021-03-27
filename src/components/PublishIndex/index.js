@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import { imageUpload, apiTest } from '../../rest/api';
+import { imageUpload } from '../../rest/api';
 
 const PublishIndex = (props) => {
   const { tokenVal, details, userImg } = props;
@@ -9,12 +9,6 @@ const PublishIndex = (props) => {
   const creatIndex = () => {
     // to do here to create Index
     imageUpload(userImg)
-      .then(data => { console.log(data) })
-      .catch(error => { console.log(JSON.stringify(error)) });
-  }
-
-  const backendApiTest = () => {
-    apiTest()
       .then(data => { console.log(data) })
       .catch(error => { console.log(JSON.stringify(error)) });
   }
@@ -61,7 +55,7 @@ const PublishIndex = (props) => {
         <p className="price">$456.87</p>
       </div>
       <div className="login-btn-section">
-        <button className="w-100 fill-btn" onClick={backendApiTest}>Create index</button>
+        <button className="w-100 fill-btn" onClick={creatIndex}>Create index</button>
       </div>
     </div>
   )
