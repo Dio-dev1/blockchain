@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './components/Shared/CommonStyle/index.scss';
 import 'bootstrap/dist/css/bootstrap.css';
-import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import ScrollToTop from './ScrollTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
