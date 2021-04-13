@@ -1,33 +1,45 @@
-import React from 'react';
-import './style.scss';
-import facebookImg from '../../assets/imgs/facebook.svg';
-import linkedinImg from '../../assets/imgs/linkedin.svg';
-import instagramImg from '../../assets/imgs/instagram.svg';
-import twitterImg from '../../assets/imgs/twitter.svg';
+import React from 'react'
+import {
+  Content,
+  SocialIconSection,
+  FooterMenuItem,
+  FooterTerm
+} from './style';
+import { useTranslation } from 'react-i18next';
+import facebookImg from '../../assets/img/facebook.svg';
+import instragramImg from '../../assets/img/instragram.svg';
+import twitterImg from '../../assets/img/twitter.svg';
+import linkdinImg from '../../assets/img/linkdin.svg';
 
 const Footer = () => {
+  const { t } = useTranslation();
 
   return (
-    <div className="footer-section d-flex align-items-center justify-content-center">
-      <div className="content">
-        <div className="social-lists d-flex align-items-center">
-          <div className="item d-flex align-items-center justify-content-center">
-            <a href="replace"><img src={facebookImg} alt="facebookImg" /></a>
-          </div>
-          <div className="item d-flex align-items-center justify-content-center">
-            <a href="replace"><img src={linkedinImg} alt="linkedinImg" /></a>
-          </div>
-          <div className="item d-flex align-items-center justify-content-center">
-            <a href="replace"><img src={instagramImg} alt="instagramImg" /></a>
-          </div>
-          <div className="item d-flex align-items-center justify-content-center">
-            <a href="replace"><img src={twitterImg} alt="twitterImg" /></a>
-          </div>
-        </div>
-        <p className="text-center">Privacy Policy and Terms of Service</p>
-        <p className="text-center">App version 3.2.4, Build 23456, CP Version 6.0</p>
+    <Content>
+      <div className="d-flex">
+        <SocialIconSection href="#">
+          <img src={facebookImg} alt="facebook" />
+        </SocialIconSection>
+        <SocialIconSection href="#">
+          <img src={linkdinImg} alt="linkdin" />
+        </SocialIconSection>
+        <SocialIconSection href="#">
+          <img src={instragramImg} alt="instragram" />
+        </SocialIconSection>
+        <SocialIconSection href="#">
+          <img src={twitterImg} alt="twitter" />
+        </SocialIconSection>
       </div>
-    </div>
+      <div className="d-flex">
+        <FooterMenuItem>{t('INFO')}</FooterMenuItem>
+        <FooterMenuItem>{t('SUPPORT')}</FooterMenuItem>
+        <FooterMenuItem>{t('LANGUAGE')}</FooterMenuItem>
+      </div>
+      <div className="d-flex">
+        <FooterTerm>{t('TERMS_OF_USE')}</FooterTerm>
+        <FooterTerm>{t('PRIVACY_POLICY')}</FooterTerm>
+      </div>
+    </Content>
   )
 }
 
